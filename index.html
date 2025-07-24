@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Server Plus</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .page-wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .content {
+      flex: 1;
+      padding-top: 100px;
+    }
+    .navbar-custom {
+     /* background-color: #000;*/
+      position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    #mainNavbar.scrolled {
+  background-color: #000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+    .navbar-custom .nav-link {
+      color: white;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #a2c543 !important;
+    }
+    .navbar-brand img {
+      height: 40px;
+    }
+    .carousel-caption {
+      padding: 20px;
+      border-radius: 10px;
+      right: 5%;
+      left: auto;
+      text-align: right;
+      bottom: 20%;
+    }
+    .carousel-caption h3,
+    .carousel-caption p {
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    }
+    .carousel-item.zoomed img {
+      animation: zoomEffect 5s infinite alternate;
+    }
+    @keyframes zoomEffect {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    .news-letter-box {
+      background-image: url('./Assets/newsletter-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      text-align: center;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .news-letter-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 60, 130, 0.7);
+      z-index: 0;
+    }
+    .news-letter-box > * {
+      position: relative;
+      z-index: 1;
+    }
+    .news-letter a:hover {
+      background-color: #000;
+      color: #a2c543;
+    }
+    .support-section-custom{
+      background-color:#004586;
+    }
+    .support-box-custom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 180px;
+      margin-top:30px;
+      transition: transform 0.3s ease;
+    }
+    .support-box-custom:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15 );
+    }
+    .icon-custom {
+      font-size: 50px;
+      background-color: white;
+      color: black;
+      padding: 15px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+     /* Animate each text falling down with delay */
+  .carousel-caption h3, .carousel-caption p {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fallIn 5s forwards;
+  }
+
+  .carousel-caption p {
+    animation-delay:0.5s;
+  }
+
+  @keyframes fallIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Carousel control styles */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel:hover .carousel-control-prev,
+  .carousel:hover .carousel-control-next {
+    opacity: 1;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: 100% 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  .carousel-control-prev:hover .carousel-control-prev-icon,
+  .carousel-control-next:hover .carousel-control-next-icon {
+    background-color:#a2c543;
+    width:30px;
+    height:30px;
+  }
+
+
+/* Custom navbar toggler */
+.custom-toggler {
+  background-color:#a2c543;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: none;
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+}
+
+.custom-toggler .navbar-toggler-icon::before,
+.custom-toggler .navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  left: 0;
+}
+
+.custom-toggler .navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.custom-toggler .navbar-toggler-icon::after {
+  top: 8px;
+}
+.mouse-scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.mouse::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #a2c543;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, 10px);
+    opacity: 0.5;
+  }
+}
+
+/* Optional: make it smaller on mobile */
+@media (max-width: 576px) {
+  .mouse {
+    width: 20px;
+    height: 35px;
+  }
+  .mouse::before {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: white;
+    }
+    /* Media Query for Mobile */
+    @media (max-width:768px) {
+      body {
+    padding-top: 56px; /* prevents overlay */
+  }
+  .navbar-custom {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  .navbar-brand img {
+    height: 25px;
+  }
+  .carousel-caption {
+    text-align: right;
+    max-width: 40%;
+    left: auto;
+    right: 5%;
+  }
+      .carousel-caption h3 {
+        font-size: 18px;
+      }
+      .carousel-caption p {
+        font-size: 14px;
+      }
+      .support-box-custom {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -40px; /* pushes the box upward */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 5;
+   padding: 20px 10px;
+      }
+      .icon-custom {
+        font-size: 40px;
+        padding: 10px;
+      }
+      .news-letter-box {
+        padding: 60px 20px;
+      }
+      .news-letter-box h5 {
+        font-size: 18px;
+      }
+      .news-letter-box p.lead {
+        font-size: 16px;
+      }
+      .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+      .navbar-brand img {
+        height: 30px;
+      }
+       .support-box-custom {
+    flex-direction: row;
+    margin-top:1px;
+    width:100%;
+    height:90px;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+  }
+  .icon-custom {
+    margin-right: 15px;
+    height:50px;
+    margin-top:10px;
+  }
+  .about-section {
+    margin-top: 50px;
+  }
+    .carousel-caption {
+      left:250px;
+      right:25px;
+      bottom: 5%;
+      text-align: right;
+      padding: 10px;
+    }
+  .carousel-caption h3 {
+    font-size:14px;
+  }
+
+  .carousel-caption p {
+    font-size:12px;
+    }
+     }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<nav id="mainNavbar"  class="navbar navbar-expand-lg navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="./Assets/LOGO-TECH.png" alt="Logo" style="height:60px;">
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Navbar
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom bg-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="./Assets/LOGO-TECH.png" alt="Logo" style="height:70px;">
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>-->
+
+  <div id="zoomCarousel" class="carousel slide position-relative" data-interval="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active carousel-slide">
+      <img src="./Assets/slider-2 (1).jpg" class="d-block w-100" alt="Zoom Slide 1">
+      <div class="carousel-caption">
+        <h3 style="text-align:center;">Tech Server Plus</h3>
+        <div class="row">
+           <div class="col-md-6 offset-md-2">
+        <p>The company was founded in 2003 We provide IT support services for network operators in the USA.</p>
+      </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item carousel-slide">
+      <img src="./Assets/slider-2 (1).jpg" class="d-block w-100" alt="Zoom Slide 2">
+      <div class="carousel-caption " >
+        <h3 style="text-align:center;">Tech Server Plus</h3>
+       <div class="row">
+      <div class="col-md-6 offset-md-2">
+        <p>The company was founded in 2003 We provide IT support services for network operators in the USA.</p>
+      </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bouncing Mouse Scroll -->
+     <div class="mouse-scroll" onclick="scrollToBottom()">
+       <div class="mouse"></div>
+    </div>
+
+
+  <!-- Chevron Buttons (custom zoom control) -->
+  <a class="carousel-control-prev" href="#" role="button" onclick="triggerZoom('prev')">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </a>
+  <a class="carousel-control-next" href="#" role="button" onclick="triggerZoom('next')">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a>
+</div>
+  
+<div class="container-fluid py-5 support-section-custom" style=" height: 350px;">
+  <div class="container">
+    <div class="row text-center">
+      <!-- Box 1 -->
+      <div class="col-md-4 mb-3">
+        <div class="support-box-custom bg-white p-4 rounded shadow d-flex flex-column align-items-center">
+          <i class="fab fa-product-hunt icon-custom mb-3"></i>
+          <h5 style="color:#004586;">Quality Products</h5>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="col-md-4 mb-3">
+        <div class="support-box-custom bg-white p-4 rounded shadow d-flex flex-column align-items-center">
+          <i class="fas fa-thumbs-up icon-custom mb-3"></i>
+          <h5 style="color:#004586;">30 Days Guarantee</h5>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="col-md-4 mb-3">
+        <div class="support-box-custom bg-white p-4 rounded shadow d-flex flex-column align-items-center">
+          <i class="fas fa-clock icon-custom mb-3"></i>
+          <h5 style="color:#004586;">On-Time Support</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="container my-5 about-section">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2><img src="./Assets/alignment.jpeg" alt="align"> ABOUT <span style="color:#007bff">TECH SERVER PLUS</span></h2>
+            <p style="color:#777;font-size:17px;">The company was founded in 2003. Currently, we are the national leader providing IT support services for network operators in the USA.</p>
+            <p style="color:#777;font-family:sans-serif;font-size:13px;"><strong>If you are looking to buy refurbished IT components or full systems (server, storage, tape library, or networking equipment) for low prices, with at least 1-year warranty and fast shipping, this is the right spot for you. Most of our team members used to work for different OEMs, we know that buying new equipment isn't always the best option - high prices, long shipping times, moreover in some cases it's not even possible to purchase some parts anymore (End of Sale)</strong></p>
+          <div class="form-group">
+             <a href="about.html" class="btn btn-primary" style="background-color:#a2c543;color:#000000;text-transform:uppercase;font-family:'Ubuntu'sans-serif;border:medium none;height:40px;">Read More...</a>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="./Assets/About-tech server.png" class="img-fluid" alt="About Image">
+        </div>
+    </div>
+</div>
+
+<!-- Newsletter Section -->
+<div class="news-letter-box">
+  <div class="col-md-12">
+  <h5 style="color:white;font-size:20px">ARE YOU LOOKING FOR QUALITY PRODUCTS?</h5>
+    <p class="lead" style="color:white;">Get all the details and pricing by contacting us.</p>
+    <div>
+      <a href="contact-us.html" class="btn btn-primary mt-2" style="background-color:#a2c543;color:#000000;border:medium none;text-transform:uppercase;padding:7px;vertical-align:middle;display:inline-block;">Inquire Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; Tech Server Plus 2003. All Rights Reserved.</p>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js (for dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+
+  function triggerZoom(direction) {
+    slides[currentSlide].classList.remove('zoomed');
+    
+    if (direction === 'next') {
+      currentSlide = (currentSlide + 1) % slides.length;
+    } else if (direction === 'prev') {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    }
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[currentSlide].classList.add('active');
+    slides[currentSlide].classList.add('zoomed');
+  }
+
+  // Initial zoomed effect
+  window.onload = () => {
+    slides[currentSlide].classList.add('zoomed');
+  };
+</script>
+
+
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('mainNavbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+<script>
+  function scrollToBottom() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+
+</body>
+
+</html>

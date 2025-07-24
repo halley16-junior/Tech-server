@@ -1,0 +1,362 @@
+<!-- PRODUCT PAGE -->
+<!-- product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Tech Server Plus</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<!--style section-->
+<style>
+  
+   html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .page-wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .content{
+      flex:1;
+      margin-top:100px;
+    }
+  .navbar-custom {
+    background-color: #000000; /* pure black */
+  }
+  .navbar-custom .nav-link {
+    color: white;
+  }
+  .navbar-custom .nav-link:hover {
+    color:#a2c543 !important; /* light grey hover */
+  }
+  /* Make navbar transparent at the top */
+  .navbar-custom {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Add background color when scrolled */
+  .navbar-scrolled {
+    background-color:#000000 !important; /* Replace with your original navbar color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+  }
+
+  /* Ensure the page-banner has space under the fixed navbar */
+  /*.page-banner-overlay {
+    padding-top: 120px; /* Adjust if your navbar height differs 
+    position: relative;
+    z-index: 1;
+  }*/
+  .page-banner{
+    padding-top: 120px; /* Adjust if your navbar height differs */
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-banner{
+            background: url('./Assets/Banner 1.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            height:300px;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+       /* .page-banner-overlay h3 {
+            font-size: 36px;
+            font-weight: bold;
+        }*/
+        .page-banner .breadcrumb {
+            background: transparent;
+            justify-content: center;
+        }
+        .page-banner .breadcrumb a {
+            color: #fff;
+        }
+        .page-banner .breadcrumb .active {
+            color: #a2c543;
+        }
+        .banner-content h3{
+          margin-right:800px;
+          margin-top:70px;
+          font-weight:900;
+          font-size:40px;
+        }
+        .banner-content ol{
+          margin-left:800px;
+           margin-bottom:400px !important;
+        }
+  
+ /* .page-banner-overlay {
+  background-image: url(./Assets/Banner\ 1.jpg);
+  background-size: cover;
+  background-position:0px;
+  background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 70px; 
+  z-index: 1;
+  overflow: hidden;
+}*/
+
+/*.page-banner-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 50, 0.6);
+  z-index: 0;
+}*/
+
+/*.page-banner-overlay .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-banner-overlay  {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.page-banner-overlay  {
+  font-size: 18px;
+  margin-top: 10px;
+}*/
+ /* Page banner overlay styles 
+        .page-banner {
+            background: url('./Assets/Banner 1.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+        .page-banner h3 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .page-banner .breadcrumb {
+            background: transparent;
+            justify-content: center;
+        }
+        .page-banner .breadcrumb a {
+            color: #fff;
+        }
+        .page-banner .breadcrumb .active {
+            color: #a2c543;
+        }*/
+/*icon{
+    font-family: 'Stroke-Gap-Icons';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+     }*/
+
+  /*page-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+    }*/
+
+    footer{
+      width: 100% !important;;
+     bottom:0px;
+    }
+     @media(max-width:768px){
+        .banner-content h3{
+          margin-right:0px;
+          margin-top:70px;
+          font-weight:900;
+          font-size:40px;
+        }
+        .banner-content ol{
+          margin-left:0px;
+           margin-bottom:400px !important;
+        }
+   }
+</style>
+</head>
+<body>
+  <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="./Assets/LOGO-TECH.png" alt="Logo" style="height:70px;"></a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item active"><a class="nav-link" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="page-banner">
+				<div class="container">
+					<div class="banner-content">
+						<h3 style="font-weight:500;font-size:32px;color:#a2c543;;text-transform:uppercase;">Products</h3>
+						<ol class="breadcrumb">
+							<li><a href="index.html" title="Home" style="text-transform:uppercase;letter-spacing:3px;">Home/ </a></li>							
+							<li class="active" style="color:#a2c543;text-transform:uppercase;letter-spacing:3px;">Product</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+
+   <div class="container my-5">
+    <h2><img src="./Assets/alignment.jpeg" alt="align">  POWER  <span style="color:#0000ff;">EDGE</span></h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="./Assets/latest-blog-1.jpg" class="card-img-top" alt="latest-blog-1">
+          <span class="hover-icon">
+            <i class="icon icon-ClipboardText"></i>
+          </span>
+          <div class="card-body">
+            <p class="card-text"><strong>Dell PowerEdge R430 19" 1U Server 4x 3,5" LFF 2x Intel XEON E5-2600 v3 / v4 DDR4 ECC PERC SAS SATA Raid 2x PSU</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="./Assets/latest-blog-2.jpg" class="card-img-top" alt="latest-blog-2 2">
+          <div class="card-body">
+            <p class="card-text"><strong>Dell PowerEdge R630 19" 1U Server 10x 2,5" SFF 4x NVMe 2x Intel XEON E5-2600 v3 v4 DDR4 ECC Raid 2x PSU</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="./Assets/latest-blog-3.jpg" class="card-img-top" alt="latest-blog-3">
+          <div class="card-body">
+            <p class="card-text"><strong>Dell PowerEdge R730xd 19" 2U 12x 3,5" LFF 2x Intel XEON E5-2600 v3 v4 PERC SAS SATA Raid 2x PSU -CTO-</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="./Assets/lastest-blog-4.jpg" class="card-img-top" alt="latest-blog-4">
+          <div class="card-body">
+            <p class="card-text"><strong>Dell PowerEdge R420 19" 1U 4x 3,5" LFF 2x XEON E5-2400 v1 v2 DDR3 ECC Raid 2x PSU Server -CTO-</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="./Assets/lastest-blog-5.jpg" class="card-img-top" alt="latest-blog-5">
+          <div class="card-body">
+            <p class="card-text"><strong>Dell PowerEdge R620 19" 1U Server 10x 2,5" SFF 2x Intel XEON E5-2600 v1 v2 PERC DDR3 ECC Raid 2x PSU - CTO-</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="./Assets/lastest-blog-6.jpg" class="card-img-top" alt="latest-blog-6">
+          <div class="card-body">
+            <p class="card-text"><strong>Dell PowerEdge R620 19" 1U Server 8x 2,5" SFF 2x Intel XEON E5-2600 v1 v2 DDR3 ECC Raid 2x PSU 3xLP - CTO -</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+<!--Storage Section-->
+      <div class="container my-5">
+   <h2><img src="./Assets/alignment.jpeg" alt="Align"> STORAGE</h2>
+
+  <div class="row"> <!-- ✅ Row wrapper added here -->
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="./Assets/storage-1.jpg" class="card-img-top" alt="storage-1">
+        <div class="card-body">
+          <p class="card-text">
+            <strong>
+              HP 19" Storserv 8000 Storage Shelf Chassis 24x 2.5" SFF HDD SSD 2x JBOD 12G SAS Controller 4x SFF-8644 2x PSU (ZFS, Ceph, NAS, SAN, DAS)
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="./Assets/storage-2.jpg" class="card-img-top" alt="storage-2">
+        <div class="card-body">
+          <p class="card-text">
+            <strong>
+              HP 19" Storserv 8000 Storage Shelf Chassis 24x 2.5" SFF HDD SSD 2x JBOD 12G SAS Controller 4x SFF-8644 2x PSU (ZFS, Ceph, NAS, SAN, DAS)
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="./Assets/storage-3.jpg" class="card-img-top" alt="storage-3">
+        <div class="card-body">
+          <p class="card-text">
+            <strong>
+              Dell PowerVault MD1400 SAS 12G DAS Storage Shelf Chassis 12x 3,5" LFF 2x JBOD SFF-8644 Controller 2x PSU 19" 2U
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+      </div>
+
+
+
+<!--<footer class="footer text-center bg-dark text-white py-3" style="width:100%;">&copy; 2003 Tech Server Plus. All rights reserved.</footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>-->
+
+
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar-custom');
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+</script>
+</body>
+
+<!--Footer Section-->
+<footer class="footer text-center bg-dark text-white py-3">&copy; 2003 Tech Server Plus. All rights reserved.</footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>
+

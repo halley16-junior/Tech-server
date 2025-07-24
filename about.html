@@ -1,0 +1,208 @@
+<!-- ABOUT PAGE -->
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Tech Server Plus</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  .navbar-custom {
+    background-color: #000000; /* pure black */
+  }
+  .navbar-custom .nav-link {
+    color: white;
+  }
+  .navbar-custom .nav-link:hover {
+    color:#a2c543; /* light grey hover */
+  }
+  /* Make navbar transparent at the top */
+  .navbar-custom {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Add background color when scrolled */
+  .navbar-scrolled {
+    background-color:#000000 !important; /* Replace with your original navbar color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+  }
+
+  /* Ensure the page-banner has space under the fixed navbar */
+  .page-banner{
+    padding-top: 120px; /* Adjust if your navbar height differs */
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-banner{
+            background: url('./Assets/Banner 1.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 100px 0;
+            height:300px;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+       /* .page-banner-overlay h3 {
+            font-size: 36px;
+            font-weight: bold;
+        }*/
+        .page-banner .breadcrumb {
+            background: transparent;
+            justify-content: center;
+        }
+        .page-banner .breadcrumb a {
+            color: #fff;
+        }
+        .page-banner .breadcrumb .active {
+            color: #a2c543;
+        }
+        .banner-content h3{
+          margin-right:800px;
+          margin-top:70px;
+          font-weight:900;
+          font-size:40px;
+        }
+        .banner-content ol{
+          margin-left:800px;
+           margin-bottom:400px !important;
+        }
+ /* .page-banner-overlay {
+  background-image: url('./Assets/blog-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 70px; 
+  z-index: 1;
+  overflow: hidden;
+}
+
+.page-banner-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 50, 0.6);
+  z-index: 0;
+}
+
+.page-banner-overlay .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-banner-overlay h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.page-banner-overlay p {
+  font-size: 18px;
+  margin-top: 10px;
+}*/
+   @media(max-width:768px){
+        .banner-content h3{
+          margin-right:10px;
+          margin-top:70px;
+          font-weight:900;
+          font-size:40px;
+        }
+        .banner-content ol{
+          margin-left:0px;
+           margin-bottom:400px !important;
+        }
+   }
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom"> 
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="./Assets/LOGO-TECH.png" alt="Logo" style="height:70px;"></a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item active"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Page Banner Overlay Section
+<section class="page-banner-overlay">
+  <div class="container text-center text-white">
+    <h1>About Us</h1>  change accordingly 
+    <p>Learn more about our mission and values.</p>
+  </div>
+</section>-->
+
+
+
+<div class="page-banner">
+				<div class="container">
+					<div class="banner-content">
+						<h3 style="font-weight:500;font-size:32px;color:#a2c543;;text-transform:uppercase;">About Us</h3>
+						<ol class="breadcrumb">
+							<li><a href="index.html" title="Home" style="text-transform:uppercase;letter-spacing:3px;">Home/ </a></li>							
+							<li class="active" style="color:#a2c543;text-transform:uppercase;letter-spacing:3px;">about us</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+
+  <div class="container my-5">
+  <div class="row align-items-center">
+    <!-- Left Column: Text -->
+    <div class="col-md-6">
+      <h2><img src="./Assets/alignment.jpeg" alt="alignment"> ABOUT <span style="color:#0000ff;">TECH SERVER PLUS</span></h2>
+      <p>Founded in 2003, Tech Server Plus is the national leader in refurbished IT infrastructure. Our dedicated team provides reliable support services for clients across the USA.</p>
+      <p>If you are looking to buy refurbished IT components or full systems (server, storage, tape library, or networking equipment) for low prices, with at least 1-year warranty and fast shipping, this is the right spot for you. Most of our team members used to work for different OEMs, we know that buying new equipment isn't always the best option - high prices, long shipping times, moreover in some cases it's not even possible to purchase some parts anymore (End of Sale)</p>
+      <p>We are not here to convince you to buy the newest technology. Your IT budget can be tight and replacing your systems is a huge pain, but the OEMs make it hard to keep your older, but well-working hardware with support costs, End of Sale announcements, etc. We are here to help you keep your IT hardware infrastructure running as long as you would like to while keeping your costs low.</p>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="col-md-6">
+      <img src="./Assets/About-tech server.png" alt="About-tech" class="img-fluid">
+    </div>
+  </div>
+</div>
+  </div>
+  <footer class="footer text-center bg-dark text-white py-3">&copy; 2003 Tech Server Plus. All rights reserved.</footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar-custom');
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-scrolled');
+    } else {
+      navbar.classList.remove('navbar-scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
